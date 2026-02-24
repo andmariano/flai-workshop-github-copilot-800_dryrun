@@ -29,7 +29,10 @@ else:
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # Use the DRF `api_root` view from `views.py` which is properly
+    # decorated and returns Codespaces-aware absolute URLs.
     path('', api_root, name='api-root'),
     path('api/', api_root, name='api-root-prefix'),
     path('api/', include(router.urls)),
 ]
+
